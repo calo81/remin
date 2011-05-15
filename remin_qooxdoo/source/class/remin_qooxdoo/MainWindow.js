@@ -20,5 +20,12 @@ qx.Class.define("remin_qooxdoo.MainWindow",
         var treeRoot = new qx.ui.tree.TreeFolder("Collections");
         collectionTree.setRoot(treeRoot);
 
+    },
+    members:{
+       openAndFetchDocuments: function(){
+           var req = new qx.io.remote.Request("document", "GET", "application/json");
+           req.send();
+           this.open();
+       }
     }
 });

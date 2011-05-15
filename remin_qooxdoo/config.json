@@ -37,7 +37,7 @@
   "let" :
   {
     "APPLICATION"  : "remin_qooxdoo",
-    "QOOXDOO_PATH" : "../../programs/qooxdoo-1.4-sdk",
+    "QOOXDOO_PATH" : "../../../programs/qooxdoo-1.4-sdk",
     "QXTHEME"      : "remin_qooxdoo.theme.Theme",
     "API_EXCLUDE"  : ["qx.test.*", "${APPLICATION}.theme.*", "${APPLICATION}.test.*", "${APPLICATION}.simulation.*"],
     "LOCALES"      : [ "en" ],

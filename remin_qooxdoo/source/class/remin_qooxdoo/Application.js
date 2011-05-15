@@ -55,7 +55,7 @@ qx.Class.define("remin_qooxdoo.Application",
 
             login.addListener("userLogged", function() {
                 alert("sx");
-                main.open();
+                main.openAndFetchDocuments();
                 login.destroy();
             });
             root.add(login);
