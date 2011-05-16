@@ -5,7 +5,7 @@ if (!window.qx) window.qx = {};
 qx.$$start = new Date();
   
 if (!window.qxsettings) qxsettings = {};
-var settings = {"qx.application":"remin_qooxdoo.Application","qx.revision":"unknown","qx.theme":"remin_qooxdoo.theme.Theme","qx.version":"1.4"};
+var settings = {"qx.application":"remin_qooxdoo.Application","qx.revision":"exported","qx.theme":"remin_qooxdoo.theme.Theme","qx.version":"1.4"};
 for (var k in settings) qxsettings[k] = settings[k];
 
 if (!window.qxvariants) qxvariants = {};
@@ -13,7 +13,7 @@ var variants = {};
 for (var k in variants) qxvariants[k] = variants[k];
 
 if (!qx.$$environment) qx.$$environment = {};
-var envinfo = {"qx.application":"remin_qooxdoo.Application","qx.revision":"unknown","qx.theme":"remin_qooxdoo.theme.Theme","qx.version":"1.4"};
+var envinfo = {"qx.application":"remin_qooxdoo.Application","qx.revision":"exported","qx.theme":"remin_qooxdoo.theme.Theme","qx.version":"1.4"};
 for (var k in envinfo) qx.$$environment[k] = envinfo[k];
 
 if (!qx.$$libraries) qx.$$libraries = {};

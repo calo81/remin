@@ -22,8 +22,13 @@ qx.Class.define("remin_qooxdoo.MainWindow",
 
     },
     members:{
+       populateTree:function(event){
+            alert(event.getContent()[0].category);
+       },
+        
        openAndFetchDocuments: function(){
            var req = new qx.io.remote.Request("document", "GET", "application/json");
+           req.addListener("completed",this.populateTree,this);
            req.send();
            this.open();
        }
