@@ -32,19 +32,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Application.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/Application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="42" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.59731543">
+            <state line="67" column="39" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainWindow.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/MainWindow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="22" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0">
+            <state line="58" column="32" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.72315437">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DocumentForm.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/DocumentForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="46" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -53,7 +62,7 @@
       <file leaf-file-name="LoginWindow.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/LoginWindow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="20" selection-start="2630" selection-end="2709" vertical-scroll-proportion="0.0">
+            <state line="17" column="0" selection-start="485" selection-end="555" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,6 +79,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/source/class/remin_qooxdoo/LoginWindow.js" />
+        <option value="$PROJECT_DIR$/source/class/remin_qooxdoo/DocumentForm.js" />
         <option value="$PROJECT_DIR$/source/class/remin_qooxdoo/Application.js" />
         <option value="$PROJECT_DIR$/source/class/remin_qooxdoo/MainWindow.js" />
       </list>
@@ -101,8 +111,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
       <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -126,6 +136,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="remin_qooxdoo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="remin_qooxdoo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="class" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="remin_qooxdoo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -244,23 +276,30 @@
         <state line="9" column="0" selection-start="287" selection-end="287" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/MainWindow.js">
+    <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/LoginWindow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="22" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="485" selection-end="555" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/LoginWindow.js">
+    <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/DocumentForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="20" selection-start="2630" selection-end="2709" vertical-scroll-proportion="0.0">
+        <state line="58" column="46" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/Application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="42" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.59731543">
+        <state line="67" column="39" selection-start="2060" selection-end="2060" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/class/remin_qooxdoo/MainWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="32" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.72315437">
           <folding />
         </state>
       </provider>

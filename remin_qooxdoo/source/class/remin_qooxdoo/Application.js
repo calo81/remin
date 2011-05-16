@@ -50,12 +50,22 @@ qx.Class.define("remin_qooxdoo.Application",
             }
             var main = new remin_qooxdoo.MainWindow();
             var login = new remin_qooxdoo.LoginWindow();
+            var documentForm = new remin_qooxdoo.DocumentForm();
 
             var root = this.getRoot();
 
             login.addListener("userLogged", function() {
                 main.openAndFetchDocuments();
                 login.destroy();
+            });
+
+            main.addListener("addNewDocument",function(){
+               documentForm.open(); 
+            });
+
+            documentForm.addListener("documentAdded",function(){
+                main.openAndFetchDocuments();
+                documentForm.destroy();
             });
             root.add(login);
 
