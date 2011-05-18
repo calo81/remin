@@ -52,8 +52,6 @@ qx.Class.define("remin_qooxdoo.Application",
             var login = new remin_qooxdoo.LoginWindow();
             var documentForm = new remin_qooxdoo.DocumentForm();
 
-            var root = this.getRoot();
-
             login.addListener("userLogged", function() {
                 main.openAndFetchDocuments();
                 login.destroy();
@@ -63,13 +61,24 @@ qx.Class.define("remin_qooxdoo.Application",
                documentForm.open(); 
             });
 
+            main.addListener("editDocument",function(event){
+                documentForm.openWithData(event.getData());
+            }),
+
             documentForm.addListener("documentAdded",function(){
                 main.openAndFetchDocuments();
-                documentForm.destroy();
+                documentForm.close();
             });
-            root.add(login);
 
-            login.open();
+            var req = new qx.io.remote.Request("login", "GET", "application/json");
+            req.addListener("completed", function(event){
+                if(event.getContent().ok!=undefined){
+                  main.openAndFetchDocuments();
+                }else{
+                   login.open();
+                }
+            }, this);
+            req.send();
 
         }
     }

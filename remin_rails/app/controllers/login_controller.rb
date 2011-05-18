@@ -8,4 +8,12 @@ class LoginController  < ApplicationController
       render :json => {:ok=>"User logged"}
     end
   end
+
+  def index
+    if session[:user]
+      return render :json => {:ok=>"in session"}
+    else
+      return render :json => {:error=>"not logged"}
+    end
+  end
 end

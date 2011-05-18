@@ -9,30 +9,45 @@ qx.Class.define("remin_qooxdoo.DocumentForm",
         this.setWidth(800);
         this.setHeight(500);
         this.setModal(true);
-         var layout = new qx.ui.layout.Grid(0, 0);
+        var layout = new qx.ui.layout.Grid(0, 0);
         this.setLayout(layout);
         this.moveTo(250, 130);
+        this.setDocNameField(new qx.ui.form.TextField());
+        this.setDescriptionField(new qx.ui.form.TextArea());
+        this.setCategoryField(new qx.ui.form.TextField());
         this.addForm();
-
-
     },
     events :
     {
         "documentAdded" : "qx.event.type.Event"
     },
+
+    properties : {
+        docNameField : {},
+        descriptionField:{},
+        categoryField:{}
+    },
+
     members:{
+        openWithData:function(data) {
+            this.getDocNameField().setValue(data.name);
+            this.getCategoryField().setValue(data.category);
+            this.getDescriptionField().setValue(data.descriptionx);
+            this.open();
+        },
+
         addForm:function() {
             var form = new qx.ui.form.Form();
-            var text = new qx.ui.form.TextField();
-            text.setRequired(true);
-            form.add(text, "Category", null, "category");
-            var password = new qx.ui.form.PasswordField();
-            password.setRequired(true);
-            form.add(password, "Name", null, "name");
-            var description = new qx.ui.form.TextArea();
-            form.add(description, "Description", null, "description");
-            var loginbutton = new qx.ui.form.Button("Save");
-            form.addButton(loginbutton);
+            var cat = this.getCategoryField();
+            cat.setRequired(true);
+            form.add(cat, "Category", null, "category");
+            var docName = this.getDocNameField();
+            docName.setRequired(true);
+            form.add(docName, "Name", null, "name");
+            var description = this.getDescriptionField();
+            form.add(description, "Description", null, "descriptionx");
+            var saveButton = new qx.ui.form.Button("Save");
+            form.addButton(saveButton);
             var formRender = new qx.ui.form.renderer.Single(form);
             this.add(formRender, {row:0,column:0});
 
@@ -43,7 +58,8 @@ qx.Class.define("remin_qooxdoo.DocumentForm",
             this.add(errorLabel, {row:1,column:0});
             var theWindow = this;
 
-            loginbutton.addListener("execute", function() {
+
+            saveButton.addListener("execute", function() {
                 if (form.validate()) {
                     var req = new qx.io.remote.Request("document", "POST", "application/json");
                     req.setData(qx.util.Serializer.toJson(controller.getModel()));

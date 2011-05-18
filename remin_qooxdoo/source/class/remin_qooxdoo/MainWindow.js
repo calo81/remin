@@ -27,8 +27,10 @@ qx.Class.define("remin_qooxdoo.MainWindow",
 
     events :
     {
-        "addNewDocument" : "qx.event.type.Event"
+        "addNewDocument" : "qx.event.type.Event",
+        "editDocument" : "qx.event.type.Data"
     },
+    
 
     members:{
         tree:{},
@@ -46,10 +48,23 @@ qx.Class.define("remin_qooxdoo.MainWindow",
             return toolbar;
         },
         populateTree:function(event) {
-            tree = this.tree;
+            theWindow = this;
+            var folderHash = new Array();
             event.getContent().forEach(function(document) {
-                var treeFolder = new qx.ui.tree.TreeFolder(document.category);
-                tree.getRoot().add(treeFolder);
+                       
+                if(folderHash[document.category]==null){
+                  folderHash[document.category] = new qx.ui.tree.TreeFolder(document.category);
+                }
+                 var treeFolder =  folderHash[document.category];
+
+                var treeFile = new qx.ui.tree.TreeFile(document.name);
+                theWindow.tree.getRoot().add(treeFolder);
+                var docu = document;
+                treeFolder.setOpen(true);
+                treeFolder.add(treeFile);
+                treeFile.addListener("dblclick",function(){
+                    this.fireDataEvent("editDocument",docu);
+                },theWindow);
             });
         },
 
