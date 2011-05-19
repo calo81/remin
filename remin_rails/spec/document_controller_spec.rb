@@ -4,16 +4,28 @@ describe "DocumentController" do
   before(:each) do
     @controller = DocumentController.new
     @controller.params={}
+    @controller.request = Object.new
+    @controller.request.instance_eval do
+      @user = Object.new
+
+      def @user.id
+        "user_id"
+      end
+
+      def session
+        @map ||={:user=>@user}
+      end
+    end
   end
 
-  it "should return all the documents on index" do
-    DocumentPersistence.should_receive(:find_all).and_return [{:category=>"cat1",:name=>"nam1"},{:category=>"cat2",:name=>"nam2"}]
-    @controller.should_receive(:render).with(:json => [{:category=>"cat1",:name=>"nam1"},{:category=>"cat2",:name=>"nam2"}])
+  it "should return all the documents on index for the user" do
+    DocumentPersistence.should_receive(:find_all).with("user_id").and_return [{:category=>"cat1", :name=>"nam1"}, {:category=>"cat2", :name=>"nam2"}]
+    @controller.should_receive(:render).with(:json => [{:category=>"cat1", :name=>"nam1"}, {:category=>"cat2", :name=>"nam2"}])
     @controller.index
   end
 
-   it "should save a document" do
-    DocumentPersistence.should_receive(:store)
+  it "should save a document" do
+    DocumentPersistence.should_receive(:store).with({:user_id=>"user_id"})
     @controller.should_receive(:render).with(:json => {:ok => "document stored"})
     @controller.create
   end

@@ -8,7 +8,7 @@ class DocumentPersistence
       @@collection.insert(hash)
   end
 
-  def self.find_all
-    @@collection.find.map{|doc| doc}
+  def self.find_all(user_id)
+    @@collection.find({:user_id => user_id}).map{|doc| doc}
   end
 end

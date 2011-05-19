@@ -15,10 +15,17 @@ describe "DocumentPersistence" do
     document['name'].should =="el nombre"
   end
 
-   it "should return all the documents when queried" do
-    DocumentPersistence.store(:category => "cat1", :name=>"el nombre")
-    DocumentPersistence.store(:category => "cat2", :name=>"el nombre2")
-    documents = DocumentPersistence.find_all
+   it "should return all the documents when queried for the user id" do
+    DocumentPersistence.store(:category => "cat1", :name=>"el nombre",:user_id=>"uid")
+    DocumentPersistence.store(:category => "cat2", :name=>"el nombre2",:user_id=>"uid")
+    documents = DocumentPersistence.find_all("uid")
     documents.size.should == 2
+   end
+
+   it "should return nothing  when queried for the wrong user id" do
+    DocumentPersistence.store(:category => "cat1", :name=>"el nombre",:user_id=>"uid")
+    DocumentPersistence.store(:category => "cat2", :name=>"el nombre2",:user_id=>"uid")
+    documents = DocumentPersistence.find_all("uid_wrong")
+    documents.size.should == 0
   end
 end
