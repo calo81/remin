@@ -4,16 +4,21 @@ class LoginController  < ApplicationController
     if !user
       render :json => {:error=>"User not found"}
     else
-      session[:user]=user
+      session[:user]=user.id
       render :json => {:ok=>"User logged"}
     end
   end
 
   def index
     if session[:user]
-      return render :json => {:ok=>"in session"}
+       render :json => {:ok=>"in session"}
     else
-      return render :json => {:error=>"not logged"}
+       render :json => {:error=>"not logged"}
     end
+  end
+
+  def destroy
+    session[:user]=nil
+    render :json => {:ok=>"logged out"}
   end
 end

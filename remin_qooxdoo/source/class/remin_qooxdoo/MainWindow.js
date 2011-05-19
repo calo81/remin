@@ -28,7 +28,8 @@ qx.Class.define("remin_qooxdoo.MainWindow",
     events :
     {
         "addNewDocument" : "qx.event.type.Event",
-        "editDocument" : "qx.event.type.Data"
+        "editDocument" : "qx.event.type.Data",
+        "requestLogout" : "qx.event.type.Event"
     },
     
 
@@ -37,6 +38,11 @@ qx.Class.define("remin_qooxdoo.MainWindow",
         addNewDocument:function(){
           this.fireEvent("addNewDocument");
         },
+
+         requestLogout:function(){
+          this.fireEvent("requestLogout");
+        },
+
         getMenuButton : function() {
             var toolbar = new qx.ui.toolbar.ToolBar;
             toolbar.setWidth(600);
@@ -44,7 +50,10 @@ qx.Class.define("remin_qooxdoo.MainWindow",
             toolbar.add(basicPart);
             var newButton = new qx.ui.toolbar.Button("New", "icon/16/actions/document-new.png", this.__newCommand);
             basicPart.add(newButton);
+            var logoutButton = new qx.ui.toolbar.Button("Logout", "icon/16/actions/document-new.png", this.__newCommand);
+            basicPart.add(logoutButton);
             newButton.addListener("execute",this.addNewDocument,this);
+            logoutButton.addListener("execute",this.requestLogout,this);
             return toolbar;
         },
         populateTree:function(event) {

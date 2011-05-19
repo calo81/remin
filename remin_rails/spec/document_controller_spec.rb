@@ -8,12 +8,9 @@ describe "DocumentController" do
     @controller.request.instance_eval do
       @user = Object.new
 
-      def @user.id
-        "user_id"
-      end
 
       def session
-        @map ||={:user=>@user}
+        @map ||={:user=>"user_id"}
       end
     end
   end

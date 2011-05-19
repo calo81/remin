@@ -20,7 +20,7 @@ describe "RegistrationController" do
         user.should_receive(:register).and_return(true)
         @controller.should_receive(:render).with({:json=>{:ok=>"User registered and logged"}})
         @controller.create
-        @controller.session.should include(:user=>user)
+        @controller.session.should include(:user=>"1")
   end
 
   context "already registerd"

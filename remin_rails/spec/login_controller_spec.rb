@@ -26,7 +26,7 @@ describe LoginController do
         User.should_receive(:find_by_username_and_password).with("carlo", "pass").and_return(user)
         @controller.should_receive(:render).with({:json=>{:ok=>"User logged"}})
         @controller.create
-        @controller.session.should include(:user=>user)
+        @controller.session.should include(:user=>"1")
       end
     end
   end

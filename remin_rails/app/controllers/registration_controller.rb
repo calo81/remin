@@ -5,7 +5,7 @@ class RegistrationController < ApplicationController
     user.password = params[:password]
     begin
       user.register
-      session[:user] = user
+      session[:user] = user.id
       render :json => {:ok => "User registered and logged"}
     rescue RuntimeError => error
       render :json => {:error => error.message}
